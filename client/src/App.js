@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MapGL, { Source, Layer } from "react-map-gl";
 import { dataLayer } from "./map-style";
 
-class Mapbox extends Component {
+class App extends Component {
   state = {
     data: [],
     viewport: {
@@ -55,4 +55,4 @@ class Mapbox extends Component {
   }
 }
 
-export default Mapbox;
+export default App;
