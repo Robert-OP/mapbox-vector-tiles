@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MapGL, { Source, Layer } from "react-map-gl";
-import { dataLayer } from "./map-style";
+// import { dataLayer } from "./map-style";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 class App extends Component {
   state = {
@@ -18,38 +19,44 @@ class App extends Component {
     // using axios-get request within getMap() function in original project
     // const { data } = await getMap() ;
     const { data } = "";
-    this.setState({ data: data });
+    this.setState({ data });
   }
 
   _onViewportChange = (viewport) => this.setState({ viewport });
 
   render() {
-    const { viewport, data } = this.state;
+    const { viewport } = this.state;
 
     return (
       <MapGL
         {...viewport}
-        // custom style created on mapbox-studio - you can use any style
-        mapStyle="mapbox://styles/epsilon2020/ckazj1w0k0zub1iodw6qk9xvy"
+        mapStyle="mapbox://styles/mapbox/dark-v10"
         onViewportChange={this._onViewportChange}
-        // insert your token
-        mapboxApiAccessToken=""
+        mapboxApiAccessToken="pk.eyJ1Ijoicm9iZXJ0LW9wIiwiYSI6ImNrMm4zcDN4cDBtZ3czY2xuZGJxa3R0N3AifQ.TFJtCTHpXN4if0hhmveQHg"
       >
         {/* 
          -- PLOT VECTOR_TILE DATA instead of geojson data
          -- plotting geojson files takes too much time 
         */}
-        <Source type="geojson" data={data}>
+        {/* <Source type="geojson" data={data}>
           <Layer {...dataLayer} />
-        </Source>
+        </Source> */}
 
-        <Source id="source_id" tileJsonSource={url} />
+        {/* <Source id="source_id" tileJsonSource={url} />
         <Layer
           type="raster"
           id="layer_id"
           sourceId="source_id"
           before="geojson_id"
-        />
+        /> */}
+        <Source type="vector" url="mapbox://robert-op.dw757j5c">
+          <Layer
+            id="vector-layer"
+            type="fill"
+            source-layer="layers-d6wv5z"
+            paint={{ "fill-color": "#3288bd", "fill-outline-color": "#f46d43" }}
+          />
+        </Source>
       </MapGL>
     );
   }

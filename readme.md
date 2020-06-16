@@ -29,7 +29,7 @@ The main directory includes to sub folders for server and client respectively.
 
 - #### React Client
 
-  This folder includes the basic layout of React App. The file `Mapbox.js` is the component which consumes incoming vector-tiles coming from the backend.
+  This folder includes the basic layout of React App. The file `App.js` is the component that utilises `Mapbox` and consumes incoming vector-tiles coming from the backend.
 
   ```
   ├── client
@@ -37,7 +37,7 @@ The main directory includes to sub folders for server and client respectively.
   │   │   ├── map-style.js
   │   │   ├── index.js
   │   │   ├── index.css
-  │   │   └── Mapbox.js
+  │   │   └── App.js
   │   ├── public
   │   │   └── index.html
   │   ├── package.json
