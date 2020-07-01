@@ -32,7 +32,7 @@ class App extends Component {
         {...viewport}
         mapStyle="mapbox://styles/mapbox/dark-v10"
         onViewportChange={this._onViewportChange}
-        mapboxApiAccessToken="pk.eyJ1Ijoicm9iZXJ0LW9wIiwiYSI6ImNrMm4zcDN4cDBtZ3czY2xuZGJxa3R0N3AifQ.TFJtCTHpXN4if0hhmveQHg"
+        mapboxApiAccessToken="MAPBOX_TOKEN_HERE"
       >
         {/* 
          -- PLOT VECTOR_TILE DATA instead of geojson data
